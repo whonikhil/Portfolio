@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
-import Projects from './components/sections/Projects';
+import Projects from './components/sections/projects';
 import Contact from './components/sections/Contact';
 import ProjectModal from './components/modal/ProjectModal'; // No curly braces!
 import type { Project } from './globalTypes';
