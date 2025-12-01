@@ -3,7 +3,7 @@ import { fadeInUp, staggerContainer } from '../../lib/animations';
 import { Code, Camera, Video } from 'lucide-react';
 
 // --- 1. IMPORT YOUR IMAGE HERE ---
-import profileImage from '../../assets/Profile.JPG';
+import profileImage from '../../assets/me.jpg';
 // (Make sure the filename matches exactly: profile.jpg or profile.png)
 
 const skills = [
