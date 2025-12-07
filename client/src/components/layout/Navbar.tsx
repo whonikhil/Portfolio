@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Moon, Sun, Camera } from 'lucide-react';
+import { Menu, X, Moon, Sun, Camera, FileText } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Navbar() {
@@ -16,10 +16,12 @@ export default function Navbar() {
 
     const toggleTheme = () => setIsDark(!isDark);
 
+    // Updated Links Array with Resume
     const navLinks = [
         { name: 'Work', href: '#projects' },
         { name: 'About', href: '#about' },
         { name: 'Contact', href: '#contact' },
+        { name: 'Resume', href: '/resume.pdf', isExternal: true }, // New Link
     ];
 
     return (
@@ -31,14 +33,21 @@ export default function Navbar() {
                     <span>NIKHIL<span className="text-primary">.</span></span>
                 </a>
 
+                {/* Desktop Menu */}
                 <div className="hidden md:flex items-center gap-8">
                     {navLinks.map((link) => (
                         <a
                             key={link.name}
                             href={link.href}
-                            className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors"
+                            target={link.isExternal ? "_blank" : "_self"} // Open resume in new tab
+                            rel={link.isExternal ? "noopener noreferrer" : ""}
+                            className={`text-sm font-medium transition-colors ${link.isExternal
+                                ? "flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-full hover:bg-teal-600"
+                                : "text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary"
+                                }`}
                         >
                             {link.name}
+                            {link.isExternal && <FileText size={16} />}
                         </a>
                     ))}
 
@@ -47,11 +56,13 @@ export default function Navbar() {
                     </button>
                 </div>
 
+                {/* Mobile Menu Toggle */}
                 <button className="md:hidden text-slate-800 dark:text-white" onClick={() => setIsOpen(!isOpen)}>
                     {isOpen ? <X /> : <Menu />}
                 </button>
             </div>
 
+            {/* Mobile Dropdown */}
             {isOpen && (
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
@@ -63,10 +74,16 @@ export default function Navbar() {
                             <a
                                 key={link.name}
                                 href={link.href}
+                                target={link.isExternal ? "_blank" : "_self"}
+                                rel={link.isExternal ? "noopener noreferrer" : ""}
                                 onClick={() => setIsOpen(false)}
-                                className="text-lg font-medium text-slate-600 dark:text-slate-300 hover:text-primary"
+                                className={`text-lg font-medium ${link.isExternal
+                                    ? "text-primary font-bold flex items-center gap-2"
+                                    : "text-slate-600 dark:text-slate-300 hover:text-primary"
+                                    }`}
                             >
                                 {link.name}
+                                {link.isExternal && <FileText size={18} />}
                             </a>
                         ))}
                         <button onClick={toggleTheme} className="flex items-center gap-2 text-slate-600 dark:text-slate-300 mt-4">
