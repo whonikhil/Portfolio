@@ -9,12 +9,13 @@ interface ProjectsProps {
 
 const fallbackProjects: Project[] = [];
 
-// --- THIS LINE IS THE FIX (export default function) ---
+// THIS IS THE COMPONENT CODE YOU WERE MISSING
 export default function Projects({ onProjectClick }: ProjectsProps) {
     const [projects, setProjects] = useState<Project[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        // Fetch data from your backend
         fetch(`${import.meta.env.VITE_API_BASE_URL}/projects`)
             .then(res => res.json())
             .then(data => {
