@@ -9,13 +9,13 @@ interface ProjectsProps {
 
 const fallbackProjects: Project[] = [];
 
-// THIS IS THE COMPONENT CODE YOU WERE MISSING
+// --- THIS IS THE COMPONENT CODE VERCEL NEEDS ---
 export default function Projects({ onProjectClick }: ProjectsProps) {
     const [projects, setProjects] = useState<Project[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Fetch data from your backend
+        // Fetch data from the backend
         fetch(`${import.meta.env.VITE_API_BASE_URL}/projects`)
             .then(res => res.json())
             .then(data => {
@@ -23,6 +23,7 @@ export default function Projects({ onProjectClick }: ProjectsProps) {
                 setLoading(false);
             })
             .catch(() => {
+                console.error("Failed to fetch projects");
                 setProjects(fallbackProjects);
                 setLoading(false);
             });
