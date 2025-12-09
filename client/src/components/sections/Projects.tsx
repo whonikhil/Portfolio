@@ -9,13 +9,12 @@ interface ProjectsProps {
 
 const fallbackProjects: Project[] = [];
 
-// --- THIS IS THE COMPONENT CODE VERCEL NEEDS ---
+// --- VERCEL NEEDS THIS FUNCTION TO BUILD THE SITE ---
 export default function Projects({ onProjectClick }: ProjectsProps) {
     const [projects, setProjects] = useState<Project[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Fetch data from the backend
         fetch(`${import.meta.env.VITE_API_BASE_URL}/projects`)
             .then(res => res.json())
             .then(data => {
