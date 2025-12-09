@@ -2,7 +2,7 @@ import express, { Request, Response } from 'express';
 import cors from 'cors';
 import nodemailer from 'nodemailer';
 import dotenv from 'dotenv';
-import { projects } from './data/projectList';
+import { projects } from './data/portfolioData';
 
 // Load the .env file
 dotenv.config();
