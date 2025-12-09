@@ -8,7 +8,7 @@ const photos = [
     { id: 3, src: '/work/mumbai3.jpg', category: 'Travel' },
     { id: 4, src: '/work/mumbai4.jpg', category: 'Street' },
     { id: 5, src: '/work/mumbai5.jpg', category: 'Brand' },
-    { id: 6, src: '/work/video-thumb.jpg', category: 'Event' },
+    //{ id: 6, src: '/work/video-thumb.jpg', category: 'Event' },
     // Add more photos if you want
 ];
 

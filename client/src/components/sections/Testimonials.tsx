@@ -3,15 +3,15 @@ import { Quote } from 'lucide-react';
 const reviews = [
     {
         text: "Nikhil has an incredible eye for detail. His photography brought our brand story to life.",
-        author: "Sarah J., Fashion Brand Owner"
+        author: "Faishon model, Influencer"
     },
     {
         text: "Amazing work ethic and creativity. The music video exceeded all our expectations.",
-        author: "Divine (Fan Project), Rapper"
+        author: "ROCKY , Rapper"
     },
     {
         text: "Professional, quick, and very talented. Highly recommended for any event shoots!",
-        author: "Rahul M., Event Organizer"
+        author: "ABCD ,College Event Organizer"
     }
 ];
 
