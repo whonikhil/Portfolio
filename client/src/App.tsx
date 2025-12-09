@@ -3,8 +3,12 @@ import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
 import Projects from './components/sections/Projects';
+import Education from './components/sections/Education'; // Imported here
+import Photography from './components/sections/Photography';
+import VideoShowcase from './components/sections/VideoShowcase';
+import Testimonials from './components/sections/Testimonials';
 import Contact from './components/sections/Contact';
-import ProjectModal from './components/modal/ProjectModal'; // No curly braces!
+import ProjectModal from './components/modal/ProjectModal';
 import type { Project } from './globalTypes';
 
 function App() {
@@ -27,9 +31,17 @@ function App() {
       <main>
         <Hero />
         <Projects onProjectClick={handleOpenModal} />
+        <Photography />
+        <VideoShowcase />
         <About />
+
+        {/* THIS IS THE MISSING LINE THAT FIXES THE IMPORT ERROR */}
+        <Education />
+
+        <Testimonials />
         <Contact />
       </main>
+
       <ProjectModal
         project={selectedProject}
         isOpen={isModalOpen}
