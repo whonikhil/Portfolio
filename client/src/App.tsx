@@ -2,8 +2,8 @@ import { useState } from 'react';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
-import Education from './components/sections/Education'; // Imported here
 import Projects from './components/sections/Projects';
+import Education from './components/sections/Education'; // Imported here
 import Photography from './components/sections/Photography';
 import VideoShowcase from './components/sections/VideoShowcase';
 import Testimonials from './components/sections/Testimonials';
